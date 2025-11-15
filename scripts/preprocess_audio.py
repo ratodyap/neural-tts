@@ -17,22 +17,24 @@ for spk in tqdm.tqdm(os.listdir(src_root)):
 
     os.makedirs(spk_dst, exist_ok=True)
 
-    for wav in os.listdir(spk_src):
-
-        # Process .wav and .flac only
-        if not wav.lower().endswith((".wav", ".flac")):
+    for file in os.listdir(spk_src):
+        fname = file.lower()
+        
+         # Process .wav and .flac only
+        if not (fname.endswith("_mic1.flac") or (fname.endswith("_mic1.wav"))):
             continue
 
-        src_path = os.path.join(spk_src, wav)
+        in_path = os.path.join(spk_src, file)
+
+        # remove "_mic1" and set output.wav
+        base = os.path.splitext(file)[0].replace("_mic1","")
+        out_path = os.path.join(spk_dst, base + ".wav")
 
         # Load audio
-        y, _ = librosa.load(src_path, sr=22050, mono=True)
+        y, _ = librosa.load(in_path, sr=22050, mono=True)
 
         # Trim silence
         y, _ = librosa.effects.trim(y, top_db=20)
 
-        # Save output as .wav
-        out_name = os.path.splitext(wav)[0] + ".wav"
-        out_path = os.path.join(spk_dst, out_name)
-
+        # Write as .wav
         sf.write(out_path, y, 22050)
