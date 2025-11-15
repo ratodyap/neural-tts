@@ -30,6 +30,7 @@ Thumbs.db
 # Audio & datasets
 #-------------------------------------------
 
+data/
 data/raw/
 data/processed/
 *.wav
