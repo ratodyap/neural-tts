@@ -8,7 +8,7 @@
     "dropout" : 0.1,
     "speaker_emb_dim" : 128,
     "learning_rate" : 1e-4,
-    "batch-size" : 16,
+    "batch_size" : 16,
     "epochs" : 50,
     "max_seq_len" :1000
 }
