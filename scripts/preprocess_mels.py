@@ -59,7 +59,9 @@ for i, row in tqdm.tqdm(df.iterrows(), total=len(df)):
 
     clean_text = normalize_text(row["text"])
 
-    rows_out.append([mel_path,clean_text,spk2id[spk]])
+     # FINAL PATCH: Save WAV path in metadata
+    rows_out.append([mel_path, wav_path, clean_text, spk2id[spk]])
+
 
 #Save mel data
 
