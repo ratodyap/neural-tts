@@ -49,9 +49,9 @@ data/processed/*
 #  Model checkpoints & logs
 #-------------------------------------------
 
-checkpoints/
+checkpoints/*
 !checkpoints/.gitkeep
-logs/
+logs/*
 !logs/.gitkeep
 run/
 *.pth
