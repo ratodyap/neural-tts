@@ -1,0 +1,13 @@
+{
+    "num_mels": 80,
+    "vocab_size": 300,
+    "hidden_size": 128,
+    "num_heads": 2,
+    "num_layers": 2,
+    "dropout": 0.1,
+    "speaker_emb_dim": 32,
+    "learning_rate": 0.0003,
+    "batch_size": 4,
+    "epochs": 3,
+    "max_seq_len": 300
+}

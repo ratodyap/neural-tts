@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn 
 
+
 class FastSpeech2(nn.Module):
 
     def __init__(self, config, num_speakers):
