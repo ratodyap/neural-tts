@@ -30,9 +30,13 @@ Thumbs.db
 # Audio & datasets
 #-------------------------------------------
 
-data/
-data/raw/
-data/processed/
+data/raw/*
+data/processed/*
+!data/.gitkeep
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/processed/mels/.gitkeep
+!data/processed/wavs/.gitkeep
 *.wav
 *.mp3
 *.flac
@@ -46,7 +50,9 @@ data/processed/
 #-------------------------------------------
 
 checkpoints/
+!checkpoints/.gitkeep
 logs/
+!logs/.gitkeep
 run/
 *.pth
 *.ckpt
@@ -71,6 +77,12 @@ samples
 docker-compose.override.yml
 
 #-------------------------------------------
-# 
+# Validation Audio
 #-------------------------------------------
 
+validation_audio/*
+!validation_audio/.gitkeep
+
+#-------------------------------------------
+# 
+#-------------------------------------------
